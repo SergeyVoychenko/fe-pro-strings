@@ -11,7 +11,7 @@ const changedString = changeWord('my name bohdan and I', 'bohdan', 'vlad'); // �
 
 console.log(changedString);
 
-const replacedString = replaceZAndVFromString('strt z and v'); // должно вернуть 'strt * and *';
+const replacedString = replaceZAndVFromString('sZtrt z anVd v'); // должно вернуть 'strt * and *';
 
 console.log(replacedString);
 
