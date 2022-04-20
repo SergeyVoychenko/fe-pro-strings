@@ -5,22 +5,20 @@
  * @returns {string}
  */
 export const replaceZAndVFromString = (string) => {
-    let str = string;
     let index = 0;
     do {
-        index = str.toLowerCase().indexOf('z');
+        index = string.toLowerCase().indexOf('z');
         if (index !== -1) {
-            str = str.slice(0, index) + '*' + str.slice((index) + 1);
+            string = string.slice(0, index) + '*' + string.slice((index) + 1);
         }
     } while ((index !== -1));
     do {
-        index = str.toLowerCase().indexOf('v');
+        index = string.toLowerCase().indexOf('v');
         if (index !== -1) {
-            str = str.slice(0, index) + '*' + str.slice((index) + 1);
+            string = string.slice(0, index) + '*' + string.slice((index) + 1);
         }
     } while ((index !== -1));
-
-    return str;
+    return string;
 };
 
 /**
@@ -67,7 +65,9 @@ export const truncate = (string, length) => {
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => { };
+export const quantityOfSymbols = (string, symbol) => {
+
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
