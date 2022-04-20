@@ -5,15 +5,21 @@
  * @returns {string}
  */
 export const replaceZAndVFromString = (string) => {
-    let str = string.toLowerCase();
+    let str = string;
+    let index = 0;
     do {
-        if (str.indexOf('z') !== -1) {
-            str = str.slice(0, str.indexOf('z')) + '*' + str.slice((str.indexOf('z')) + 1);
+        index = str.toLowerCase().indexOf('z');
+        if (index !== -1) {
+            str = str.slice(0, index) + '*' + str.slice((index) + 1);
         }
-        if (str.indexOf('v') !== -1) {
-            str = str.slice(0, str.indexOf('v')) + '*' + str.slice((str.indexOf('v')) + 1);
+    } while ((index !== -1));
+    do {
+        index = str.toLowerCase().indexOf('v');
+        if (index !== -1) {
+            str = str.slice(0, index) + '*' + str.slice((index) + 1);
         }
-    } while ((str.indexOf('z') !== -1) && (str.indexOf('v') !== -1));
+    } while ((index !== -1));
+
     return str;
 };
 
@@ -48,7 +54,7 @@ export const changeWord = (string, word, newWord) => {
  */
 export const truncate = (string, length) => {
     return string = string.slice(0, length);
- };
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
