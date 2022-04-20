@@ -27,7 +27,18 @@ export const replaceZAndVFromString = (string) => {
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => { };
+export const changeWord = (string, word, newWord) => {
+    let index = string.indexOf(word);
+    let name = string.substring(index, (index + word.length));
+    while (name !== word) {
+        index = string.indexOf(word, (index + 1));
+        if (index === -1) {
+            return string;
+        }
+    }
+    string = string.slice(0, index) + newWord + string.slice(index + word.length);
+    return string;
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
