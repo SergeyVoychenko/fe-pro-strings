@@ -66,12 +66,15 @@ export const truncate = (string, length) => {
  * @returns {number}
  */
 export const quantityOfSymbols = (string, symbol) => {
-    let counter = 0;
+    let i = 0;
     let pos = -1;
-    while ((pos = string.toLowerCase().indexOf(symbol.toLowerCase(), pos + 1)) !== -1) {
-        counter++;
+    for (; ;) {
+        if ((pos = string.toLowerCase().indexOf(symbol.toLowerCase(), pos + 1)) === -1) {
+            break;
+        }
+        i++;
     }
-    return counter;
+    return i;
 };
 
 /**
@@ -89,4 +92,14 @@ export const quantityOfSymbols = (string, symbol) => {
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => { };
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+    let counter = 0;
+    let pos = -1;
+    while (true) {
+        if ((pos = string.toLowerCase().indexOf(symbol.toLowerCase(), pos + 1)) === -1) {
+            break;
+        }
+        counter++;
+    }
+    return counter;
+};
