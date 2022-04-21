@@ -66,7 +66,12 @@ export const truncate = (string, length) => {
  * @returns {number}
  */
 export const quantityOfSymbols = (string, symbol) => {
-
+    let counter = 0;
+    let pos = -1;
+    while ((pos = string.toLowerCase().indexOf(symbol.toLowerCase(), pos + 1)) !== -1) {
+        counter++;
+    }
+    return counter;
 };
 
 /**

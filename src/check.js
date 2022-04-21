@@ -19,10 +19,10 @@ const truncatedString = truncate('test strubg ', 3); // Должно верну�
 
 console.log(truncatedString);
 
-const cycledSymbols = quantityOfSymbols('Test', 't');
+const cycledSymbols = quantityOfSymbols('Test Test Test', 'E');
 
 console.log(cycledSymbols); // вернет 2
 
-const cycledSymbolsIndexOf = quantityOfSymbolsWithIndexOf('Test', 't');
+const cycledSymbolsIndexOf = quantityOfSymbolsWithIndexOf('Test', 'a');
 
 console.log(cycledSymbolsIndexOf); // вернет 2
