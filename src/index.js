@@ -9,13 +9,15 @@ export const replaceZAndVFromString = (string) => {
     do {
         index = string.toLowerCase().indexOf('z');
         if (index !== -1) {
-            string = string.slice(0, index) + '*' + string.slice((index) + 1);
+            string = `${string.slice(0, index)}*${string.slice((index) + 1)}`;    
+            // string = string.slice(0, index) + '*' + string.slice((index) + 1);
         }
     } while ((index !== -1));
     do {
         index = string.toLowerCase().indexOf('v');
         if (index !== -1) {
-            string = string.slice(0, index) + '*' + string.slice((index) + 1);
+            string = `${string.slice(0, index)}*${string.slice((index) + 1)}`;
+            // string = string.slice(0, index) + '*' + string.slice((index) + 1);
         }
     } while ((index !== -1));
     return string;
@@ -40,7 +42,8 @@ export const changeWord = (string, word, newWord) => {
             return string;
         }
     }
-    string = string.slice(0, index) + newWord + string.slice(index + word.length);
+    string = `${string.slice(0, index)}${newWord}${string.slice(index + word.length)}`;
+    // string = string.slice(0, index) + newWord + string.slice(index + word.length);
     return string;
 };
 
